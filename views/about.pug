@@ -1,171 +1,120 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Big Picture Consulting
-    link(rel='icon', href='/images/icon.png')
-  body
-    header
-      a(href='/')
-        #brand
-          img(src='/images/brand.png', alt='brand')
-      ul#menuList
-        a.menuItem(href='about') About
-        a.menuItem(href='services') Services
-        a.menuItem(href='testimonials') Testimonials
-        a.menuItem(href='faq') FAQ
-        a(href='/#contact')
-          button#getStarted.ghostBtn Get Started
-      button#dropDownButton
-        i.icon-menu
-    #dropDownMenu
-      ul#dropDownList
-        a.dropDownItem(href='about') About
-        a.dropDownItem(href='services') Services
-        a.dropDownItem(href='testimonials') Testimonials
-        a.dropDownItem(href='faq') FAQ
-        a(href='/#contact')
-          button#dropDownGetStarted Get Started
-    section#aboutTop.secondTop
-    section#titleSection
-      h1 About Big Picture Consulting
-    section.main
-      p
-      h2 Why does Big Picture Consulting exist?
-      |       We exist to serve leaders.
+include partials/head.pug
+body
+  include partials/navigation.pug
+  section#aboutTop.secondTop
+  section#titleSection
+    h1 About Big Picture Consulting
+  section.main
+    p
+    h2 Why does Big Picture Consulting exist?
+    |       We exist to serve leaders.
+    br
+    br
+    |       Maybe you or someone you know has some great ideas, but you're not quite sure how to define and
+    |       implement them.
+    br
+    br
+    |       Maybe you have a big vision with big goals and need help prioritizing and communicating them to
+    |       your leadership team. Or maybe you need help getting a vision and setting goals for you and your
+    |       organization.
+    br
+    br
+    |       Maybe you can’t quite see the forest because of all the trees. Maybe you can't get a clear view of the
+    |       horizon because of the intense wind and waves raging all around you. Or maybe you could use a
+    |       lighthouse to help you navigate the treacherous seas and rocky shores of business ownership.
+    br
+    .quoteContainer
+      img.quoteImg(src='/images/quotes/ashleyBrilliant.png', alt='ashleyBrilliant')
+    br
+    |       That’s why we’re here – to get in the trenches with you and focus on your big picture.
+    h2 How can we help you?
+    |       We can help you to:
+    ul
+      li Evaluate your strategic plan and adjust as necessary
+      li Analyze the efficiencies and inefficiencies of your operations
+      li
+        | Assess your team and internal communications to see if they are where you need them to be right
+        | now
+      li
+        | Dive into your revenues, expenses and margins to see where improvements might be made
+      li
+        | Critique your sales, marketing and external communications efforts to look for possible ways to
+        | stimulate revenue growth
+      li
+        | Develop and install expense control systems in order to better plan for and meet your bottom-line
+        | goals
+      li Become the leader you know you need to be
+    |       We're as committed to your success as you are. 
+    |       We're in it with you.
+    h2 Let’s get together
+    |       We would love to meet you and learn about what you are doing, what keeps you up at night, and
+    |       what keeps you going. We can learn from each other. Let’s grab a coffee together.
+    br
+    br
+    |       You can text or call 
+    a(href='#glenn') Glenn Love
+    | , the owner and president of BPC, at 
+    a(href='tel:7043096285') 704-309-6285
+    | ,
+    |       or email him at 
+    a(href='mailto:glenn@bigpicture.life') glenn@bigpicture.life
+    |  or you can ask
+    |       Glenn to get in touch with you 
+    a(href='/#contact') here
+    | .
+    p
+  section#titleSection
+    h1 About Glenn Love
+  section#glenn.main
+    p
+      img#portrait(src='/images/glenn.png', alt='glenn', align='left')
+      |       Glenn Love is the owner and president of Big Picture Consulting, a regional
+      |       management consulting firm that gets in the trenches with leaders of all
+      |       types to help them analyze and learn, develop alternatives, make decisions,
+      |       and act.
       br
       br
-      |       Maybe you or someone you know has some great ideas, but you're not quite sure how to define and
-      |       implement them.
+      |       Since entering the management consulting field in 1995, Glenn has served
+      |       leaders and organizations in 17 states and The Bahamas. Glenn’s purpose
+      |       and passion is to work alongside leaders of all types to help them overcome
+      |       obstacles, develop innovative solutions, and focus on the big picture. One of
+      |       Glenn’s favorite business axioms is, “You can’t be what you can’t see.”
       br
       br
-      |       Maybe you have a big vision with big goals and need help prioritizing and communicating them to
-      |       your leadership team. Or maybe you need help getting a vision and setting goals for you and your
-      |       organization.
+      |       Prior to launching his own practice, Glenn invested nearly 15 years in commercial banking and sports
+      |       marketing where he worked alongside leaders of privately held businesses, as well as Fortune 500
+      |       companies including Wachovia (now Wells Fargo), NCNB (now Bank of America), Exxon Co. USA,
+      |       Coca-Cola, Procter & Gamble, PepsiCo, and Tyson Foods. One of Glenn’s proudest professional
+      |       achievements is when he was employed with a Charlotte-based consulting firm that worked closely
+      |       with Jerry Richardson and family to attract an NFL franchise – the Carolina Panthers – to Charlotte.
+      |       Glenn also served as a senior project leader for an international management consulting firm based
+      |       in Chicago. In recent years, he has worked with leadership teams at United Way, Hospice of
+      |       Cabarrus County and Cooperative Christian Ministry to assist with fundraising, marketing, social
+      |       media planning and community education initiatives.
       br
       br
-      |       Maybe you can’t quite see the forest because of all the trees. Maybe you can't get a clear view of the
-      |       horizon because of the intense wind and waves raging all around you. Or maybe you could use a
-      |       lighthouse to help you navigate the treacherous seas and rocky shores of business ownership.
+      |       Glenn is well-published on the subject of management and leadership, and has contributed articles to
+      |       The Charlotte Business Journal, The Charlotte Observer, and Cabarrus Business magazine. He has
+      |       authored numerous articles for various publications including the “Family Business Forum” for the
+      |       Business Today Journal. Glenn conducts seminars and workshops for Big Picture clients, financial
+      |       institutions, community colleges, chambers of commerce and professional associations throughout
+      |       the Charlotte metro region and the Carolinas.
       br
       .quoteContainer
-        img.quoteImg(src='/images/quotes/ashleyBrilliant.png', alt='ashleyBrilliant')
+        img.quoteImg(src='/images/quotes/steveJobs.png', alt='steveJobs')
       br
-      |       That’s why we’re here – to get in the trenches with you and focus on your big picture.
-      h2 How can we help you?
-      |       We can help you to:
-      ul
-        li Evaluate your strategic plan and adjust as necessary
-        li Analyze the efficiencies and inefficiencies of your operations
-        li
-          | Assess your team and internal communications to see if they are where you need them to be right
-          | now
-        li
-          | Dive into your revenues, expenses and margins to see where improvements might be made
-        li
-          | Critique your sales, marketing and external communications efforts to look for possible ways to
-          | stimulate revenue growth
-        li
-          | Develop and install expense control systems in order to better plan for and meet your bottom-line
-          | goals
-        li Become the leader you know you need to be
-      |       We're as committed to your success as you are. 
-      |       We're in it with you.
-      h2 Let’s get together
-      |       We would love to meet you and learn about what you are doing, what keeps you up at night, and
-      |       what keeps you going. We can learn from each other. Let’s grab a coffee together.
+      |       He earned his bachelor’s degree in economics from the University of North Carolina at Chapel Hill
+      |       and has received ongoing business management training and certifications from The Business
+      |       School for Entrepreneurial Education and Gateway Leadership Academy. In addition, Glenn holds a
+      |       North Carolina real estate license and is an honors graduate of Christ School, an all boys college-
+      |       prep boarding school near Asheville, North Carolina.
+      |       Glenn has a passion for community. He has volunteered at Meals on Wheels, Urban Ministry,
+      |       Hospice, Hope Junction and Redeemer’s Recovery Ranch.
       br
       br
-      |       You can text or call 
-      a(href='#glenn') Glenn Love
-      | , the owner and president of BPC, at 
-      a(href='tel:7043096285') 704-309-6285
-      | ,
-      |       or email him at 
-      a(href='mailto:glenn@bigpicture.life') glenn@bigpicture.life
-      |  or you can ask
-      |       Glenn to get in touch with you 
-      a(href='/#contact') here
-      | .
-      p
-    section#titleSection
-      h1 About Glenn Love
-    section#glenn.main
-      p
-        img#portrait(src='/images/glenn.png', alt='glenn', align='left')
-        |       Glenn Love is the owner and president of Big Picture Consulting, a regional
-        |       management consulting firm that gets in the trenches with leaders of all
-        |       types to help them analyze and learn, develop alternatives, make decisions,
-        |       and act.
-        br
-        br
-        |       Since entering the management consulting field in 1995, Glenn has served
-        |       leaders and organizations in 17 states and The Bahamas. Glenn’s purpose
-        |       and passion is to work alongside leaders of all types to help them overcome
-        |       obstacles, develop innovative solutions, and focus on the big picture. One of
-        |       Glenn’s favorite business axioms is, “You can’t be what you can’t see.”
-        br
-        br
-        |       Prior to launching his own practice, Glenn invested nearly 15 years in commercial banking and sports
-        |       marketing where he worked alongside leaders of privately held businesses, as well as Fortune 500
-        |       companies including Wachovia (now Wells Fargo), NCNB (now Bank of America), Exxon Co. USA,
-        |       Coca-Cola, Procter & Gamble, PepsiCo, and Tyson Foods. One of Glenn’s proudest professional
-        |       achievements is when he was employed with a Charlotte-based consulting firm that worked closely
-        |       with Jerry Richardson and family to attract an NFL franchise – the Carolina Panthers – to Charlotte.
-        |       Glenn also served as a senior project leader for an international management consulting firm based
-        |       in Chicago. In recent years, he has worked with leadership teams at United Way, Hospice of
-        |       Cabarrus County and Cooperative Christian Ministry to assist with fundraising, marketing, social
-        |       media planning and community education initiatives.
-        br
-        br
-        |       Glenn is well-published on the subject of management and leadership, and has contributed articles to
-        |       The Charlotte Business Journal, The Charlotte Observer, and Cabarrus Business magazine. He has
-        |       authored numerous articles for various publications including the “Family Business Forum” for the
-        |       Business Today Journal. Glenn conducts seminars and workshops for Big Picture clients, financial
-        |       institutions, community colleges, chambers of commerce and professional associations throughout
-        |       the Charlotte metro region and the Carolinas.
-        br
-        .quoteContainer
-          img.quoteImg(src='/images/quotes/steveJobs.png', alt='steveJobs')
-        br
-        |       He earned his bachelor’s degree in economics from the University of North Carolina at Chapel Hill
-        |       and has received ongoing business management training and certifications from The Business
-        |       School for Entrepreneurial Education and Gateway Leadership Academy. In addition, Glenn holds a
-        |       North Carolina real estate license and is an honors graduate of Christ School, an all boys college-
-        |       prep boarding school near Asheville, North Carolina.
-        |       Glenn has a passion for community. He has volunteered at Meals on Wheels, Urban Ministry,
-        |       Hospice, Hope Junction and Redeemer’s Recovery Ranch.
-        br
-        br
-        |       Glenn was born and raised in Charlotte and has been married to Pamela for more than 30 years. He
-        |       and his wife are blessed with four children and a granddaughter and live near Mt. Pleasant, NC. He
-        |       and his family attend Community Church of Mt. Pleasant. On the personal side, Glenn loves traveling
-        |       and hanging out with his family, writing songs on guitar and piano, and reading and napping in the
-        |       hammock.
-    footer
-      .footer-col
-        h1 About BPC
-        p.text.black
-          | We exist to serve leaders. We get in the trenches with you to custom design meaningful, relavant solutions to your greatest challenges. Our mission is to help you analyze, learn, see the alternatives, make decisions, and act. It's your big picture. We're in it with you.
-      .footer-col
-        h1 Useful Links
-        p.text
-          a(href='about') About BPC and it's President
-          a(href='services') Consulting Services
-          a(href='testimonials') What Others Are Saying
-          a(href='/#contact') Contact
-      .footer-col
-        h1 Social
-        p.text
-          a(href='http://linkedin.com/in/glenn-love-42b62717') Linkedin
-          a(href='#') Google+
-          a(href='#') Twitter
-          a(href='#') Facebook
-    #copyright
-      | Copyright © 2017 - Big Picture Consulting
-  link(href='https://fonts.googleapis.com/css?family=Titillium+Web:200,400,600', rel='stylesheet')
-  link(href='/styles/fontello.css', rel='stylesheet')
-  link(rel='stylesheet', href='/styles/master.css')
-  script(src='/scripts/zenscroll-min.js')
-  script(src='/scripts/dropDown.js')
+      |       Glenn was born and raised in Charlotte and has been married to Pamela for more than 30 years. He
+      |       and his wife are blessed with four children and a granddaughter and live near Mt. Pleasant, NC. He
+      |       and his family attend Community Church of Mt. Pleasant. On the personal side, Glenn loves traveling
+      |       and hanging out with his family, writing songs on guitar and piano, and reading and napping in the
+      |       hammock.
+include partials/foot.pug

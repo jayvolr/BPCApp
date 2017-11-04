@@ -1,132 +1,81 @@
-doctype html
-html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Big Picture Consulting
-    link(rel='icon', href='images/icon.png')
-  body
-    header
-      a(href='/')
-        #brand
-          img(src='images/brand.png', alt='brand')
-      ul#menuList
-        a.menuItem(href='about') About
-        a.menuItem(href='services') Services
-        a.menuItem(href='testimonials') Testimonials
-        a.menuItem(href='faq') FAQ
-        a(href='/#contact')
-          button#getStarted.ghostBtn Get Started
-      button#dropDownButton
-        i.icon-menu
-    #dropDownMenu
-      ul#dropDownList
-        a.dropDownItem(href='about') About
-        a.dropDownItem(href='services') Services
-        a.dropDownItem(href='testimonials') Testimonials
-        a.dropDownItem(href='faq') FAQ
-        a(href='/#contact')
-          button#dropDownGetStarted Get Started
-    section#testimonialsTop.secondTop
-    section#titleSection
-      h1 What Others Are Saying
-    section.main
-      p
-        q
-          | The amount of time I was spending at the office was increasing while the profits the business were making were
-          | decreasing. Glenn came in and helped me re-organize the entire company so that now I delegate tasks to a
-          | handful of department managers rather than trying to do it all myself. These changes have freed me up to focus
-          | on managing our expenses and profit margins which is what a company president is suppose to do anyway.
-          | Glenn has had a very positive impact on my business, as well as my personal perspective of it.
-        br
-        br
-        span.quoteAuthor – Todd, President and CEO of a Machine Tooling Manufacturer
-        br
-        br
-        hr
-        br
-        q
-          | My goal was to get my managers to adopt more of an ownership mentality in running their respective regions.
-          | Glenn came in and recommended we set up cost centers for each of our regions and hold the managers
-          | accountable for managing the budgets and profit margins we established for each. The implementation of these
-          | recommendations has made a tremendous impact in our daily operations. I can honestly say that I received
-          | “dollar value for dollar spent.” I truly appreciate Glenn’s ongoing assistance and thank him for all of his efforts and
-          | professionalism.
-        br
-        br
-        span.quoteAuthor – Jack, President and CEO of a Regional Tree Care Service
-        br
-        br
-        hr
-        br
-        q
-          | Glenn helped me make some major decisions concerning my business. His hands-on approach to our staff
-          | teamwork problems helped pull our employees together. Without question, the work he did in my dental practice
-          | dramatically improved staff teamwork and productivity. I really enjoyed working with Glenn.
-        br
-        br
-        span.quoteAuthor – Jeff, DDS, principle of a Family Dental Practice
-        br
-        br
-        hr
-        br
-        q
-          | I brought Glenn into my business to help me get organized, become more efficient, and develop policies and
-          | procedures to systematize the internal work we do in each department. He immediately identified some
-          | inadequate billing procedures for our field labor and helped us establish new guidelines to better manage all of
-          | our expenses. I feel I received a great return on my investment.
-        br
-        br
-        span.quoteAuthor – Brandon, President of a Heating and Cooling Contracting Company
-        br
-        br
-        hr
-        br
-        q
-          | I wanted Glenn to analyze our operations and determine why our profit margins were shrinking. He isolated the
-          | problem to one specific product line by analyzing revenues and related expenses for each product lines We
-          | ended up dropping the unprofitable one to focus on those that are making money for us. I was very impressed
-          | with the work Glenn did and his degree of professionalism.
-        br
-        br
-        span.quoteAuthor – Frank, Owner of a Farm Equipment Dealership
-        br
-        br
-        hr
-        br
-        q
-          | I really needed help improving morale and attitudes throughout the company. Glenn came in and produced better
-          | job descriptions for our employees and outlined my performance expectations of all. He developed a
-          | comprehensive Employee Policy Handbook that includes my purpose and vision for the business, as well as how
-          | pay increases are determined for everyone throughout the organization. I was very pleased with all of the work
-          | Glenn did and highly recommend his consulting services. He definitely knows what he’s doing.
-        br
-        br
-        span.quoteAuthor – Carol, CEO of a Private Retail Drug Store Chain
-        br
-    footer
-      .footer-col
-        h1 About BPC
-        p.text.black
-          | We exist to serve leaders. We get in the trenches with you to custom design meaningful, relavant solutions to your greatest challenges. Our mission is to help you analyze, learn, see the alternatives, make decisions, and act. It's your big picture. We're in it with you.
-      .footer-col
-        h1 Useful Links
-        p.text
-          a(href='about') About BPC and it's President
-          a(href='services') Consulting Services
-          a(href='testimonials') What Others Are Saying
-          a(href='/#contact') Contact
-      .footer-col
-        h1 Social
-        p.text
-          a(href='http://linkedin.com/in/glenn-love-42b62717') Linkedin
-          a(href='#') Google+
-          a(href='#') Twitter
-          a(href='#') Facebook
-    #copyright
-      | Copyright © 2017 - Big Picture Consulting
-  link(href='https://fonts.googleapis.com/css?family=Titillium+Web:200,400,600', rel='stylesheet')
-  link(href='styles/fontello.css', rel='stylesheet')
-  link(rel='stylesheet', href='/styles/master.css')
-  script(src='scripts/zenscroll-min.js')
-  script(src='scripts/dropDown.js')
+include partials/head.pug
+body
+  include partials/navigation.pug
+  section#testimonialsTop.secondTop
+  section#titleSection
+    h1 What Others Are Saying
+  section.main
+    p
+      q
+        | The amount of time I was spending at the office was increasing while the profits the business were making were
+        | decreasing. Glenn came in and helped me re-organize the entire company so that now I delegate tasks to a
+        | handful of department managers rather than trying to do it all myself. These changes have freed me up to focus
+        | on managing our expenses and profit margins which is what a company president is suppose to do anyway.
+        | Glenn has had a very positive impact on my business, as well as my personal perspective of it.
+      br
+      br
+      span.quoteAuthor – Todd, President and CEO of a Machine Tooling Manufacturer
+      br
+      br
+      hr
+      br
+      q
+        | My goal was to get my managers to adopt more of an ownership mentality in running their respective regions.
+        | Glenn came in and recommended we set up cost centers for each of our regions and hold the managers
+        | accountable for managing the budgets and profit margins we established for each. The implementation of these
+        | recommendations has made a tremendous impact in our daily operations. I can honestly say that I received
+        | “dollar value for dollar spent.” I truly appreciate Glenn’s ongoing assistance and thank him for all of his efforts and
+        | professionalism.
+      br
+      br
+      span.quoteAuthor – Jack, President and CEO of a Regional Tree Care Service
+      br
+      br
+      hr
+      br
+      q
+        | Glenn helped me make some major decisions concerning my business. His hands-on approach to our staff
+        | teamwork problems helped pull our employees together. Without question, the work he did in my dental practice
+        | dramatically improved staff teamwork and productivity. I really enjoyed working with Glenn.
+      br
+      br
+      span.quoteAuthor – Jeff, DDS, principle of a Family Dental Practice
+      br
+      br
+      hr
+      br
+      q
+        | I brought Glenn into my business to help me get organized, become more efficient, and develop policies and
+        | procedures to systematize the internal work we do in each department. He immediately identified some
+        | inadequate billing procedures for our field labor and helped us establish new guidelines to better manage all of
+        | our expenses. I feel I received a great return on my investment.
+      br
+      br
+      span.quoteAuthor – Brandon, President of a Heating and Cooling Contracting Company
+      br
+      br
+      hr
+      br
+      q
+        | I wanted Glenn to analyze our operations and determine why our profit margins were shrinking. He isolated the
+        | problem to one specific product line by analyzing revenues and related expenses for each product lines We
+        | ended up dropping the unprofitable one to focus on those that are making money for us. I was very impressed
+        | with the work Glenn did and his degree of professionalism.
+      br
+      br
+      span.quoteAuthor – Frank, Owner of a Farm Equipment Dealership
+      br
+      br
+      hr
+      br
+      q
+        | I really needed help improving morale and attitudes throughout the company. Glenn came in and produced better
+        | job descriptions for our employees and outlined my performance expectations of all. He developed a
+        | comprehensive Employee Policy Handbook that includes my purpose and vision for the business, as well as how
+        | pay increases are determined for everyone throughout the organization. I was very pleased with all of the work
+        | Glenn did and highly recommend his consulting services. He definitely knows what he’s doing.
+      br
+      br
+      span.quoteAuthor – Carol, CEO of a Private Retail Drug Store Chain
+      br
+include partials/foot.pug

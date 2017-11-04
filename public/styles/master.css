@@ -15,6 +15,38 @@ header {
   transition: background 150ms ease-in-out;
 }
 
+#successRibbon {
+  width: 100vw;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  color: white;
+  background-color: #2cd917;
+  text-align: center;
+  position: fixed;
+  top: 71px;
+  overflow: hidden;
+  -webkit-transition: height 150ms;
+  -o-transition: height 150ms;
+  transition: height 150ms;
+}
+
+#errorRibbon {
+  width: 100vw;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  color: white;
+  background-color: #e24141;
+  text-align: center;
+  position: fixed;
+  top: 71px;
+  overflow: hidden;
+  -webkit-transition: height 150ms;
+  -o-transition: height 150ms;
+  transition: height 150ms;
+}
+
 a {
   text-decoration: none;
   color: #40c2c5;
