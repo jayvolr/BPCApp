@@ -81,5 +81,5 @@ var ribbon = document.getElementById('successRibbon') || document.getElementById
 if (!!ribbon) {
   setTimeout(function(){
     ribbon.style.height = 0;
-  }, 3000)
+  }, 4500)
 }

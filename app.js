@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const nodemailer = require('nodemailer');
-const secrets = require('secrets.js');
+const secrets = require('./secrets.js');
 
 let transporter = nodemailer.createTransport({
     host: 'mail.privateemail.com',
