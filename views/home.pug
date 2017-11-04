@@ -1,0 +1,163 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Big Picture Consulting
+    link(rel='icon', href='images/icon.png')
+  body
+    header
+      #brand
+        img(src='images/brand.png', alt='brand')
+      ul#menuList
+        a.menuItem About
+        a.menuItem Services
+        a.menuItem Testimonials
+        a.menuItem FAQ
+        button#getStarted.ghostBtn Get Started
+      button#dropDownButton
+        i.icon-menu
+    #dropDownMenu
+      ul#dropDownList
+        a.dropDownItem About
+        a.dropDownItem Services
+        a.dropDownItem Testimonials
+        a.dropDownItem FAQ
+        button#dropDownGetStarted Get Started
+    section#top
+      #logoTop
+      h2
+        i We're in it with you.
+    section#about
+      .text
+        h1.title About
+        p.black
+          | Big Picture Consulting is a unique and innovative management consulting firm headquarterd in
+          | Charlotte. We exist to get in the trenches with you, to help you strategize, solve complex problems,
+          | grow revenues, increase profits, and more effectively hire, manage and retain the best people. BPC was
+          | created to help leaders think outside the box, see the bigger picture, and continuously improve.
+        a(href='/about')
+          button.moreBtn.blueBtn Continue Reading
+      .img
+    section#services
+      .img
+      .text
+        h1.title Services
+        p.black
+          | All of our services are custom taylored to fit the unique needs and goals of clients.
+          | Whether your business has 10 employees or 500 employees, our work is equally applicable and beneficial.
+          br
+          br
+          |         We offer full-scope and limited-scope assessments, profitability and cost control consulting, revenue growth and marketing structures, strategic plan development, dashboard design and installation for monitoring purposes, organizational development and change consulting, leadership coaching and more.
+          br
+          a(href='/services')
+            button.moreBtn.blueBtn View Our Services
+    section#testimonials
+      .text
+        h1.title What Others Are Saying
+        p.black
+          | At the conclusion of each project, Glenn invites his clients to share their opinions about the services they received. Below are some statements shared by CEOs and business owners that Glenn has assisted over the years.
+        p.black
+          | “The amount of time I was spending at the office was increasing while the profits the business were making were decreasing. Glenn came in and helped me re-organize the entire company so that now I delegate tasks to a handful of department ...”
+        a(href='/testimonials')
+          button.moreBtn.blueBtn Read Testimonials
+      .img
+    section#faq
+      .img
+        h1.titleOnImg Frequently Asked Questions
+      .text.black
+        span.question
+          b Q:
+        |       How do I know you would hold in strict confidence any information I
+        |       would share with you and not get into any conflict-of-interest situations that could potentially jeopardize my
+        |       organization?
+        br
+        br
+        span.answer
+          b A:
+        |       BPC’s owner and president, Glenn Love, and any associate consultants who
+        |       work on BPC projects, are required to sign the Engagement Agreement which contains a very strict confidentiality
+        |       clause, as well as a conflict-of-interest avoidance clause. BPC works hard to gain your trust, and thus take
+        |       these issues extremely seriously in order to maintain your trust.
+        br
+        br
+        hr
+        br
+        span.question
+          b Q:
+        |  How much are your fees?
+        br
+        br
+        span.answer
+          b A:
+        |       That depends on the scope and depth of the work we do, the size of your
+        |       organization, the number of employees you have, the complexity of the project, and a variety other factors that
+        |       must be considered. Before any work is done, the work required is carefully defined and put in writing,
+        |       all phases of the project are outlined in writing, and the fee to be charged for each phase is provided.
+        |       There are no surprises and no undisclosed add-ons (i.e., no "change orders") without prior discussion and prior
+        |       written consent from the client.
+        br
+        br
+        a(href='/faq')
+          button#expandFaq.moreBtn.blueBtn See all FAQs
+    section#contact
+      h1.title Contact
+      p.text.black
+        | If you have any questions or wish to request a one-hour, no-cost / no obligation
+        | consulation with Glenn Love, the owner and president of BPC,
+        | please submit the form below and Glenn will get back to you as soon as possible.
+        | Thank you.
+        br
+        br
+        |       Big Picture Consulting
+        br
+        |       Charlotte, NC
+        br
+        br
+        |       Glenn Love
+        br
+        |       Owner & President
+        br
+        |       Email:
+        a(href='mailto:glenn@bigpicture.life') glenn@bigpicture.life
+        br
+        |       Phone:
+        a(href='tel:7043096285') 704-309-6285
+      form/#contactForm.text(action='https://formspree.io/glenn@bigpicture.life', method='post')
+        input(type='text', name='name', placeholder='Name*', required='')
+        br
+        input(type='email', name='email', placeholder='Email*', required='')
+        br
+        input(type='tel', name='phone', placeholder='Phone')
+        br
+        input(type='text', name='subject', placeholder='Subject*', required='')
+        br
+        textarea(type='text', name='message', placeholder='Message*', required='')
+        br
+        button#formSubmit.ghostBtn(type='submit', name='submit') Send
+    footer
+      .footer-col
+        h1 About BPC
+        p.text.black
+          | We exist to serve leaders. We get in the trenches with you to custom design meaningful, relavant solutions to your greatest challenges. Our mission is to help you analyze, learn, see the alternatives, make decisions, and act. It's your big picture. We're in it with you.
+      .footer-col
+        h1 Useful Links
+        p.text
+          a(href='about') About BPC and it's President
+          a(href='services') Consulting Services
+          a(href='testimonials') What Others Are Saying
+          a(href='#contact') Contact
+      .footer-col
+        h1 Social
+        p.text
+          a(href='http://linkedin.com/in/glenn-love-42b62717') Linkedin
+          a(href='#') Google+
+          a(href='#') Twitter
+          a(href='#') Facebook
+    #copyright
+      | Copyright © 2017 - Big Picture Consulting
+  link(href='https://fonts.googleapis.com/css?family=Titillium+Web:200,400,600', rel='stylesheet')
+  link(href='styles/fontello.css', rel='stylesheet')
+  link(rel='stylesheet', href='styles/master.css')
+  script(src='scripts/zenscroll-min.js')
+  script(src='scripts/master.js')
