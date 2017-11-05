@@ -19,5 +19,5 @@ app
   .use(require('./routes/staticRoutes'))
   .use(require('./routes/dbRoutes'))
   .listen(3000, () => {
-    console.log('Server listening on port 3000...');
+    console.log(`Server listening on port 3000... (${app.get('env')})`);
   });

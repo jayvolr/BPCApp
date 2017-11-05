@@ -15,6 +15,7 @@ if (process.env.NODE_ENV === "production") {
       pass: secrets.emailPassword
     }
   });
+  console.log('Using production email transporter');
 }else {
   nodemailer.createTestAccount((err, account) => {
     transporter = nodemailer.createTransport({
