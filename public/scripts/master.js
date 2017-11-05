@@ -80,6 +80,7 @@ var ribbon = document.getElementById('successRibbon') || document.getElementById
 
 if (!!ribbon) {
   setTimeout(function(){
-    ribbon.style.height = 0;
-  }, 4500)
+    ribbon.style.maxHeight = 0;
+    ribbon.style.padding = 0;
+  }, 1500)
 }

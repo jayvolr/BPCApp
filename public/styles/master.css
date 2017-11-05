@@ -16,25 +16,28 @@ header {
 }
 
 #successRibbon {
+  max-height: 70px;
   width: 100vw;
-  height: 40px;
-  line-height: 40px;
+  padding: 10px 0;
   font-size: 18px;
   color: white;
-  background-color: #2cd917;
+  background-color: #40c2c5;
   text-align: center;
   position: fixed;
   top: 71px;
   overflow: hidden;
-  -webkit-transition: height 150ms;
-  -o-transition: height 150ms;
-  transition: height 150ms;
+  -webkit-transition: max-height 400ms;
+  -o-transition: max-height 400ms;
+  transition: max-height 400ms;
+  -webkit-transition: padding 400ms;
+  -o-transition: padding 400ms;
+  transition: padding 400ms;
 }
 
 #errorRibbon {
+  max-height: 70px;
   width: 100vw;
-  height: 40px;
-  line-height: 40px;
+  padding: 10px 0;
   font-size: 18px;
   color: white;
   background-color: #e24141;
@@ -42,9 +45,12 @@ header {
   position: fixed;
   top: 71px;
   overflow: hidden;
-  -webkit-transition: height 150ms;
-  -o-transition: height 150ms;
-  transition: height 150ms;
+  -webkit-transition: max-height 400ms;
+  -o-transition: max-height 400ms;
+  transition: max-height 400ms;
+  -webkit-transition: padding 400ms;
+  -o-transition: padding 400ms;
+  transition: padding 400ms;
 }
 
 a {
