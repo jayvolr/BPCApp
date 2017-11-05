@@ -82,5 +82,5 @@ if (!!ribbon) {
   setTimeout(function(){
     ribbon.style.maxHeight = 0;
     ribbon.style.padding = 0;
-  }, 1500)
+  }, 4500)
 }
