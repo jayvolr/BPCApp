@@ -76,11 +76,10 @@ if (!!window.location.hash) {
   zenscroll.toY(zenscroll.getTopOf(document.getElementById(section)) - 71);
 }
 
-var ribbon = document.getElementById('successRibbon') || document.getElementById('errorRibbon');
+var ribbon = document.getElementById('infoRibbon') || document.getElementById('errorRibbon');
 
 if (!!ribbon) {
   setTimeout(function(){
-    ribbon.style.maxHeight = 0;
-    ribbon.style.padding = 0;
-  }, 4500)
+    ribbon.style.top = 0;
+  }, 4000)
 }

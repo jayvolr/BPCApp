@@ -13,44 +13,30 @@ header {
   -webkit-transition: background 150ms ease-in-out;
   -o-transition: background 150ms ease-in-out;
   transition: background 150ms ease-in-out;
+  z-index: 1;
 }
 
-#successRibbon {
+.ribbon {
   max-height: 70px;
   width: 100vw;
   padding: 10px 0;
   font-size: 18px;
   color: white;
-  background-color: #40c2c5;
   text-align: center;
   position: fixed;
   top: 71px;
   overflow: hidden;
-  -webkit-transition: max-height 400ms;
-  -o-transition: max-height 400ms;
-  transition: max-height 400ms;
-  -webkit-transition: padding 400ms;
-  -o-transition: padding 400ms;
-  transition: padding 400ms;
+  -webkit-transition: top 500ms ease-in-out;
+  -o-transition: top 500ms ease-in-out;
+  transition: top 500ms ease-in-out;
+}
+
+#infoRibbon {
+  background-color: #40c2c5;
 }
 
 #errorRibbon {
-  max-height: 70px;
-  width: 100vw;
-  padding: 10px 0;
-  font-size: 18px;
-  color: white;
   background-color: #e24141;
-  text-align: center;
-  position: fixed;
-  top: 71px;
-  overflow: hidden;
-  -webkit-transition: max-height 400ms;
-  -o-transition: max-height 400ms;
-  transition: max-height 400ms;
-  -webkit-transition: padding 400ms;
-  -o-transition: padding 400ms;
-  transition: padding 400ms;
 }
 
 a {
@@ -511,6 +497,12 @@ form textarea:focus {
   box-shadow: #00000021 3px 3px 10px;
 }
 
+#optOut {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
 footer {
   padding: 20px 60px;
 }
@@ -555,8 +547,7 @@ Dedicated pages
   padding-top: 71px;
   min-height: 200px;
   background-size: cover;
-  background-position: bottom;
-  background-attachment: fixed;
+  background-position: center;
 }
 
 #aboutTop {
@@ -634,7 +625,6 @@ Displays with less than 800px of width
 @media (max-width: 800px) {
 
   .secondTop {
-    background-attachment: inherit;
     background-position: top;
     min-height: 150px;
   }

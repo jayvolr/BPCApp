@@ -20,10 +20,10 @@ body
       a.dropDownItem Testimonials
       a.dropDownItem FAQ
       button#dropDownGetStarted Get Started
-  if success
-    #successRibbon Thank you! Your message has been sent and we'll get back to you ASAP.
+  if info
+    .ribbon#infoRibbon #{info}
   if error
-    #errorRibbon Sorry! There was a server error and your message could not be sent.
+    .ribbon#errorRibbon #{error}
   section#top
     #logoTop
     h2
@@ -124,15 +124,30 @@ body
       |       Phone: 
       a(href='tel:7043096285') 704-309-6285
     form#contactForm.text(action='/contact', method='post')
-      input(type='text', name='name', placeholder='Name*', required='')
+      input(type='text', name='firstName', placeholder='First Name*', autocomplete='given-name', required)
       br
-      input(type='email', name='email', placeholder='Email*', required='')
+      input(type='text', name='lastName', placeholder='Last Name*', autocomplete='family-name', required)
       br
-      input(type='tel', name='phone', placeholder='Phone')
+      input(type='email', name='email', placeholder='Email*', autocomplete='email', required)
       br
-      input(type='text', name='subject', placeholder='Subject*', required='')
+      input(type='tel', name='phone', placeholder='Phone', autocomplete='tel-local')
       br
-      textarea(type='text', name='message', placeholder='Message*', required='')
+      input(type='text', name='orgName', placeholder='Organization Name', autocomplete='organization')
+      br
+      input(type='number', name='orgZIP', placeholder='Organization ZIP Code', autocomplete='postal-code')
+      br
+      datalist#referrers
+        option(value="From a friend")
+        option(value="Twitter")
+        option(value="LinkedIn")
+      input(type='text' list='referrers', name="referrer", placeholder='How did you hear about us?')
+      input(type='text', name='subject', placeholder='Subject*', required)
+      br
+      textarea(type='text', name='message', placeholder='Message*', required)
+      br
+      input#optOut(type='checkbox', name='optOut')
+      label(for='optOut') I would like to opt out of subscribing to your email list
+      br
       br
       button#formSubmit.ghostBtn(type='submit', name='submit') Send
   footer

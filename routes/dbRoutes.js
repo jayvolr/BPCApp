@@ -17,16 +17,13 @@ if (process.env.NODE_ENV === "production") {
   });
   console.log('Using production email transporter');
 }else {
-  nodemailer.createTestAccount((err, account) => {
-    transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        secure: false,
-        auth: {
-            user: account.user, // generated ethereal user
-            pass: account.pass  // generated ethereal password
-        }
-    });
+  transporter = nodemailer.createTransport({
+      host: 'smtp.ethereal.email',
+      port: 587,
+      auth: {
+          user: secrets.etherealUser,
+          pass: secrets.etherealPass
+      }
   });
   console.log('Using mock email transporter');
 }
@@ -39,6 +36,9 @@ router
     })
   })
   .post('/contact', (req, res) => {
+    req.flash('info', 'Thank you! Your message has been sent. We\'ll get back to you ASAP.');
+    res.redirect('/');
+
     //Data validation
     // req.check('email', 'Invalid email address').isEmail();
     // req.check('phone', 'Invalid phone number').isMobilePhone();
@@ -51,27 +51,30 @@ router
         from: '"Glenn Love" <glenn@bigpicture.life>',
         to: 'glenn@bigpicture.life',
         subject: 'Contact Form Submission',
-        text: `Name: ${req.body.name}\nEmail: ${req.body.email}\nPhone: ${req.body.phone || 'Not provided'}\nSubject: ${req.body.subject}\n--------------------------------------\n\n${req.body.message}`
+        text: `Name: ${req.body.firstName + ' ' + req.body.lastName}\nEmail: ${req.body.email}\nPhone: ${req.body.phone || 'Not provided'}\nOrganization Name: ${req.body.orgName}\nOrganization ZIP: ${req.body.orgZIP}\nReferrer: ${req.body.referrer}\nSubject: ${req.body.subject}\n--------------------------------------\n\n${req.body.message}`
     };
 
     const newPerson = {
-      name: req.body.name,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
-      phone: req.body.phone
+      phone: req.body.phone,
+      orgName: req.body.orgName,
+      orgZIP: req.body.orgZIP,
+      referrer: req.body.referrer,
+      optOut: req.body.optOut === 'on' ? true : false
     }
 
     req.db.get('people').insert(newPerson);
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-          console.log(error);
-          return res.redirect('/?success=false');
+          console.error(error);
         }else {
           console.log('Message sent');
           if (process.env.NODE_ENV !== "production") {
             console.log(nodemailer.getTestMessageUrl(info));
           }
-          return res.redirect('/?success=true');
         }
     });
   });
