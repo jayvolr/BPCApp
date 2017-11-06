@@ -6,6 +6,8 @@ const mongo = require('mongodb');
 const secrets = require('./secrets.js');
 const session = require('express-session');
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 const db = app.get('env') === 'production' ? require('monk')('localhost:27017/prod') : require('monk')('localhost:27017/bpcDev');
 
@@ -27,6 +29,6 @@ app
   })
   .use(require('./routes/staticRoutes'))
   .use(require('./routes/dbRoutes'))
-  .listen(3000, () => {
-    console.log(`Server listening on port 3000... (${app.get('env')})`);
+  .listen(port, () => {
+    console.log(`Server listening on port ${port}... (${app.get('env')})`);
   });
