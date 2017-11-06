@@ -83,3 +83,8 @@ if (!!ribbon) {
     ribbon.style.top = 0;
   }, 4000)
 }
+
+function onSubmit(g) {
+  console.log('submitted');
+  console.log(g);
+}

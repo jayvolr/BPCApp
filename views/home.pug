@@ -126,7 +126,7 @@ body
       br
       input(type='email', name='email', placeholder='Email*', autocomplete='email', required)
       br
-      input(type='tel', name='phone', placeholder='Phone', autocomplete='tel-local')
+      input(type='tel', name='phone', placeholder='Phone', autocomplete='tel-national')
       br
       input(type='text', name='orgName', placeholder='Organization Name', autocomplete='organization')
       br
@@ -145,6 +145,7 @@ body
       label.black(for='optOut') I would like to opt out of subscribing to your email list
       br
       br
+      //- button#formSubmit.ghostBtn.g-recaptcha(data-sitekey="6LfrWDcUAAAAAKBVgaz6mzyL_ZSI-ZVqB0L5f-Je", data-callback="onSubmit") Send
       button#formSubmit.ghostBtn(type='submit', name='submit') Send
   footer
     .footer-col
