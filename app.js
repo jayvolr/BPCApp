@@ -6,7 +6,7 @@ const mongo = require('mongodb');
 const secrets = require('./secrets.js');
 const session = require('express-session');
 
-const port = process.env.PORT || 3000;
+const port = secrets.port;
 
 const app = express();
 const db = app.get('env') === 'production' ? require('monk')('localhost:27017/prod') : require('monk')('localhost:27017/bpcDev');
