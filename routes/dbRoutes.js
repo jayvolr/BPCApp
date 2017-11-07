@@ -77,6 +77,34 @@ router
           }
         }
     });
+
+    const confirmationMailOptions = {
+        from: '"Glenn Love" <glenn@bigpicture.life>',
+        to: req.body.email,
+        subject: 'Confirmation',
+        html: `${req.body.firstName},
+        <br><br>
+        Thank you for reaching out to me. I will be in touch with you soon.
+        <br><br>
+        Respectfully,
+        <br><br>
+        Glenn Love<br>
+        President<br>
+        Big Picture Consulting
+        <br><br>
+        <i>We're in it with you</i>`
+    };
+
+    transporter.sendMail(confirmationMailOptions, (error, info) => {
+        if (error) {
+          console.error(error);
+        }else {
+          console.log('Confirmation Email sent');
+          if (process.env.NODE_ENV !== "production") {
+            console.log(nodemailer.getTestMessageUrl(info));
+          }
+        }
+    });
   });
 
 module.exports = router;
