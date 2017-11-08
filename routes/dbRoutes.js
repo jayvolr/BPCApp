@@ -37,7 +37,7 @@ router
     });
   })
   .post('/contact', (req, res) => {
-    request.post({url:'https://www.google.com/recaptcha/api/siteverify', form: {response: req.body.recaptcha, secret:'6LfrWDcUAAAAACMpmArNirHuVMy0ofvaAQY10di7'}}, function(err,httpResponse,body) {
+    request.post({url:'https://www.google.com/recaptcha/api/siteverify', form: {response: req.body.recaptcha, secret: secrets.captchaSecret}}, function(err,httpResponse,body) {
       const isHuman = JSON.parse(body)['success'];
 
       // Data validation
