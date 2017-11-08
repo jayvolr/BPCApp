@@ -109,21 +109,18 @@ function checkValidity(element) {
 
   switch (element.name) {
     case 'firstName':
-      console.log('checking validity of firstName');
       if (element.value.length > 0) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
       }
       break;
     case 'lastName':
-      console.log('checking validity of lastName');
       if (element.value.length > 0) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
       }
       break;
     case 'email':
-      console.log('checking validity of email');
       if (validator.isEmail(element.value)) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
@@ -134,7 +131,6 @@ function checkValidity(element) {
       }
       break;
     case 'email2':
-      console.log('checking validity of email2');
       if (element.value === document.forms.contactForm.email.value) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
@@ -145,7 +141,6 @@ function checkValidity(element) {
       }
       break;
     case 'phone':
-      console.log('checking validity of phone');
       if (validator.isMobilePhone(element.value, 'en-US')) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
@@ -159,7 +154,6 @@ function checkValidity(element) {
       }
       break;
     case 'orgZIP':
-      console.log('checking validity of orgZIP');
       if (validator.isPostalCode(element.value, 'US')) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
@@ -173,11 +167,16 @@ function checkValidity(element) {
       }
       break;
     default:
-      console.log('input not recognized');
+      break;
   }
 
   if (!Object.values(validityStatus).includes(false)) {
-    console.log('ALL VALID');
+    // console.log('ALL VALID');
+    document.getElementById('fakeSubmit').classList.add('hidden');
+    document.getElementById('formSubmit').classList.remove('hidden');
+  }else {
+    document.getElementById('formSubmit').classList.add('hidden');
+    document.getElementById('fakeSubmit').classList.remove('hidden');
   }
 }
 
@@ -190,14 +189,17 @@ document.forms.contactForm.message.addEventListener('blur', function(e) {
   checkValidity(e.srcElement);
 });
 
-document.getElementById('formSubmit').addEventListener('click', function(e) {
-  if (Object.values(validityStatus).includes(false)) {
-    e.preventDefault();
-    zenscroll.toY(zenscroll.getTopOf(document.getElementById('contact')) - 71)
-  }
-})
+document.getElementById('fakeSubmit').addEventListener('click', function(e) {
+  zenscroll.toY(zenscroll.getTopOf(document.getElementById('contactForm')) - 71);
+});
 
-function onSubmit(g) {
-  console.log('submitted');
-  console.log(g);
+// document.getElementById('formSubmit').addEventListener('click', function(e) {
+//   document.forms.contactForm.submit();
+// });
+
+function onRecaptcha(g) {
+  document.getElementById('hidden').value = g;
+  if (!Object.values(validityStatus).includes(false)) {
+    document.forms.contactForm.submit();
+  }
 }

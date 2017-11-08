@@ -16,6 +16,14 @@ header {
   z-index: 1;
 }
 
+.hidden {
+  display: none;
+}
+
+.grecaptcha-badge {
+  display: none;
+}
+
 .ribbon {
   max-height: 70px;
   width: 100vw;
