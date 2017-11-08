@@ -59,7 +59,25 @@ router
         from: '"Glenn Love" <glenn@bigpicture.life>',
         to: 'glenn@bigpicture.life',
         subject: 'Contact Form Submission',
-        text: `Name: ${req.body.firstName + ' ' + req.body.lastName}\nEmail: ${req.body.email}\nPhone: ${req.body.phone || 'Not provided'}\nOrganization Name: ${req.body.orgName}\nOrganization ZIP: ${req.body.orgZIP}\nReferrer: ${req.body.referrer}\nSubject: ${req.body.subject}\n--------------------------------------\n\n${req.body.message}`
+        html:
+          `Name: <b>${req.body.firstName + ' ' + req.body.lastName}</b>
+          <br>
+          Email: <b>${req.body.email}</b>
+          <br>
+          Phone: <b>${req.body.phone || 'Not provided'}</b>
+          <br>
+          Organization Name: <b>${req.body.orgName || 'Not provided'}</b>
+          <br>
+          Organization ZIP: <b>${req.body.orgZIP || 'Not provided'}</b>
+          <br>
+          Referrer: <b>${req.body.referrer || 'Not provided'}</b>
+          <br>
+          <br>
+          Subject: <b>${req.body.subject}</b>
+          <br>
+          <hr>
+          <br>
+          ${req.body.message}`
       };
 
       const newPerson = {
