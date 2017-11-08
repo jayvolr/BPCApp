@@ -56,6 +56,7 @@ router
         res.redirect('/');
         console.log('Form validation errors');
       }else {
+        console.log('Verified as human');
         req.flash('info', 'Thank you! Your message has been sent. We\'ll get back to you ASAP.');
         res.redirect('/');
 
@@ -93,7 +94,7 @@ router
           orgZIP: req.body.orgZIP,
           referrer: req.body.referrer,
           optOut: req.body.optOut === 'on' ? true : false,
-          creationDate: Date.now() 
+          creationDate: Date.now()
         }
 
         req.db.get('people').insert(newPerson);
