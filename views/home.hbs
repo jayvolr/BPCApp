@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head}}
+  <body>
+    <header>
+      <div id="brand"><img src="images/brand.png" alt="brand"></div>
+      <ul id="menuList"><a class="menuItem">About</a><a class="menuItem">Services</a><a class="menuItem">Testimonials</a><a class="menuItem">FAQ</a><button id="getStarted" class="ghostBtn">Get Started</button></ul><button id="dropDownButton"><i class="icon-menu"></i></button></header>
+      <div id="dropDownMenu">
+        <ul id="dropDownList"><a class="dropDownItem">About</a><a class="dropDownItem">Services</a><a class="dropDownItem">Testimonials</a><a class="dropDownItem">FAQ</a><button id="dropDownGetStarted">Get Started</button></ul>
+      </div>
+
+      {{#if info}}
+        <div id="infoRibbon" class="ribbon">{{info}}</div>
+      {{/if}}
+      {{#if error}}
+        <div id="errorRibbon" class="ribbon">{{error}}</div>
+      {{/if}}
+
+      <section id="top">
+        <div id="logoTop"></div>
+        <h2><i>We're in it with you.</i></h2>
+      </section>
+      <section id="about">
+        <div class="text">
+          <h1 class="title">About</h1>
+          <p class="black">Big Picture Consulting is a management consulting firm that exists to serve leaders. Our mission is to help you strategize, grow your revenues, increase your profits and solve complex problems. It's your big picture. We're in it with you.</p>
+          <a
+            href="/about"><button class="moreBtn blueBtn">Continue Reading</button></a>
+        </div>
+        <div class="img"></div>
+      </section>
+      <section id="services">
+        <div class="img"></div>
+        <div class="text">
+          <h1 class="title">Services</h1>
+          <p class="black">All of our services are custom taylored to fit the unique needs and goals of our clients. Whether your business has 10 employees or 500 employees, our work is equally applicable and beneficial.<br><br> We offer full-scope and limited-scope assessments,
+            profitability and cost control consulting, revenue growth and marketing structures, strategic plan development, dashboard design and installation for monitoring purposes, organizational development and change consulting, leadership coaching
+            and more.<br><a href="/services"><button class="moreBtn blueBtn">View Our Services</button></a></p>
+        </div>
+      </section>
+      <section id="testimonials">
+        <div class="text">
+          <h1 class="title">What Others Are Saying</h1>
+          <p class="black">At the conclusion of each project the owner of BPC, Glenn Love, invites clients to share their opinions about the services they received. Below are some statements shared by CEOs and business owners that Glenn has assisted over the years.</p>
+          <p
+            class="black">
+            <blockquote>"The amount of time I was spending at the office was increasing while the profits the business were making were decreasing. Glenn came in and helped me re-organize the entire company so that now I delegate tasks to a handful of department ..."</blockquote>
+            </p><a href="/testimonials"><button class="moreBtn blueBtn">Read Testimonials</button></a></div>
+        <div class="img"></div>
+      </section>
+      <section id="faq">
+        <div class="img">
+          <h1 class="titleOnImg">Frequently Asked Questions</h1>
+        </div>
+        <div class="text black"><span class="answer"><b>Q:</b></span> How do I know that any information I would share with you would be held in strict confidence?<br><br><span class="answer"><b>A:</b></span> Any consultants who work on BPC projects are required to sign the Engagement
+          Agreement which contains a strict confidentiality and non-disclosure clause. BPC works hard to gain your trust and takes these issues extremely seriously in order to maintain your trust.<br><br>
+          <hr><br><span class="answer"><b>Q:</b></span> How much are your fees?<br><br><span class="answer"><b>A:</b></span> That depends on the scope and depth of the work we do, the size of your organization, the number of employees you have, the complexity
+          of the project, and a variety of other factors that must be considered. Before any work is done, the work required is carefully defined and put in writing, all phases of the project are outlined in writing, and the fee to be charged for each phase
+          is provided. There are no surprises and no undisclosed add-ons (i.e., no "change orders") without prior discussion and prior written consent from the client.<br><br><a href="/faq"><button id="expandFaq" class="moreBtn blueBtn">See all FAQs</button></a></div>
+      </section>
+      <section id="contact">
+        <h1 class="title">Contact</h1>
+        <p class="text black">If you have any questions or wish to request a free one-hour consulation with Glenn Love, the owner and president of BPC, please submit the form below and he will get back to you as soon as possible. Thank you.<br><br> Big Picture Consulting<br>        Charlotte, NC<br><br> Glenn Love<br> Email: <a href="mailto:glenn@bigpicture.life">glenn@bigpicture.life</a><br> Phone: <a href="tel:7043096285">704-309-6285</a></p>
+
+        <form id="contactForm" action="/contact" method="post" class="text">
+          <input type="text" name="firstName" placeholder="First Name*" autocomplete="given-name" required><br>
+          <p class="formError" id="firstNameError">Please fill out this field</p>
+          <input type="text" name="lastName" placeholder="Last Name*" autocomplete="family-name" required><br>
+          <p class="formError" id="lastNameError">Please fill out this field</p>
+          <input type="email" name="email" placeholder="Email*" autocomplete="email" required><br>
+          <p class="formError" id="emailError">Please enter a valid email address</p>
+          <input type="email" name="email2" placeholder="Confirm Email*" autocomplete="email" required><br>
+          <p class="formError" id="email2Error">Email address does not match</p>
+          <input type="tel" name="phone" placeholder="Phone" autocomplete="tel-national"><br>
+          <p class="formError" id="phoneError">Please enter a valid US phone number</p>
+          <input type="text" name="orgName" placeholder="Organization Name" autocomplete="organization"><br>
+          <input type="number" name="orgZIP" placeholder="Organization ZIP Code" autocomplete="postal-code"><br>
+          <p class="formError" id="orgZIPError">Please enter a valid US ZIP code</p>
+          <datalist id="referrers">
+            <option value="From a friend"></option>
+            <option value="Twitter"></option>
+            <option value="LinkedIn"></option>
+          </datalist>
+          <input type="text" list="referrers" name="referrer" placeholder="How did you hear about us?">
+          <input type="text" name="subject" placeholder="Subject*" required><br>
+          <p class="formError" id="subjectError">Please fill out this field</p>
+          <textarea type="text" name="message" placeholder="Message*" required></textarea><br>
+          <p class="formError" id="messageError">Please fill out this field</p>
+          <input id="optOut" type="checkbox" name="optOut">
+          <label for="optOut" class="black">I would like to opt out of subscribing to your email list</label><br><br>
+          <!-- button#formSubmit.ghostBtn.g-recaptcha(data-sitekey="6LfrWDcUAAAAAKBVgaz6mzyL_ZSI-ZVqB0L5f-Je", data-callback="onSubmit") Send -->
+          <button id="formSubmit" type="submit" name="submit" class="ghostBtn">Send</button>
+        </form>
+
+      </section>
+      <footer>
+        <div class="footer-col">
+          <h1>About BPC</h1>
+          <p class="text black">Big Picture Consulting is a management consulting firm that exists to serve leaders. Our mission is to help you strategize, grow your revenues, increase your profits and solve complex problems. It's your big picture. We're in it with you.</p>
+        </div>
+        <div class="footer-col">
+          <h1>Useful Links</h1>
+          <p class="text"><a href="about">About BPC and it's President</a><a href="services">Consulting Services</a><a href="testimonials">What Others Are Saying</a><a href="#contact">Contact</a></p>
+        </div>
+        <div class="footer-col">
+          <h1>Social</h1>
+          <p class="text"><a href="http://linkedin.com/in/glenn-love-42b62717">Linkedin</a><a href="#">Google+</a><a href="#">Twitter</a><a href="#">Facebook</a></p>
+        </div>
+      </footer>
+      <div id="copyright">Copyright © 2017 - Big Picture Consulting</div>
+  </body>
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+  <link href="styles/fontello.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/master.css">
+  <script src="scripts/zenscroll-min.js" defer></script>
+  <script type="text/javascript" src="scripts/validator.min.js"></script>
+  <script src="scripts/master.js" defer></script>
+</html>

@@ -498,6 +498,13 @@ form textarea:focus {
   box-shadow: #00000021 3px 3px 10px;
 }
 
+body section form .formError {
+  display: none;
+  color: red;
+  font-size: 15px;
+  margin: 0;
+}
+
 #optOut {
   width: 15px;
   height: 15px;
@@ -678,8 +685,6 @@ Displays with less than 800px of width
     height: 250px;
     overflow: hidden;
   }
-
-  section .text p {}
 
   .title {
     font-size: 33px;

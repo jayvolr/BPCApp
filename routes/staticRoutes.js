@@ -3,7 +3,8 @@ const router = express.Router();
 
 router
   .get('/', (req, res) => {
-    res.render('home', { info: req.flash('info')[0] });
+    res.render('home', { info: req.flash('info')[0], error: req.session.error });
+    delete req.session.error;
   })
   .get('/about', (req, res) => {
     res.render('about');

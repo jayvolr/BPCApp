@@ -36,38 +36,46 @@ router
     })
   })
   .post('/contact', (req, res) => {
-    req.flash('info', 'Thank you! Your message has been sent. We\'ll get back to you ASAP.');
-    res.redirect('/');
+    // Data validation
+    req.check('email', 'Invalid email address').isEmail();
+    req.check('email', 'Email addresses don\'t match').equals(req.body.email2);
+    if (!!req.body.phone) {
+      req.check('phone', 'Invalid phone number').isMobilePhone('en-US');
+    }
+    if (!!req.body.orgZIP) {
+      req.check('orgZIP', 'Invalid ZIP code').isPostalCode('US');
+    }
+    const errors = req.validationErrors();
 
-    //Data validation
-    // req.check('email', 'Invalid email address').isEmail();
-    // req.check('phone', 'Invalid phone number').isMobilePhone();
-    //
-    // if (req.validationErrors()) {
-    //
-    // }
+    if (errors) {
+      req.session.error = 'Your message was not sent. There was an error with the information you submitted.';
+      res.redirect('/');
+      console.log('Form validation errors');
+    }else {
+      req.flash('info', 'Thank you! Your message has been sent. We\'ll get back to you ASAP.');
+      res.redirect('/');
 
-    const mailOptions = {
+      const mailOptions = {
         from: '"Glenn Love" <glenn@bigpicture.life>',
         to: 'glenn@bigpicture.life',
         subject: 'Contact Form Submission',
         text: `Name: ${req.body.firstName + ' ' + req.body.lastName}\nEmail: ${req.body.email}\nPhone: ${req.body.phone || 'Not provided'}\nOrganization Name: ${req.body.orgName}\nOrganization ZIP: ${req.body.orgZIP}\nReferrer: ${req.body.referrer}\nSubject: ${req.body.subject}\n--------------------------------------\n\n${req.body.message}`
-    };
+      };
 
-    const newPerson = {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      phone: req.body.phone,
-      orgName: req.body.orgName,
-      orgZIP: req.body.orgZIP,
-      referrer: req.body.referrer,
-      optOut: req.body.optOut === 'on' ? true : false
-    }
+      const newPerson = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        phone: req.body.phone,
+        orgName: req.body.orgName,
+        orgZIP: req.body.orgZIP,
+        referrer: req.body.referrer,
+        optOut: req.body.optOut === 'on' ? true : false
+      }
 
-    req.db.get('people').insert(newPerson);
+      req.db.get('people').insert(newPerson);
 
-    transporter.sendMail(mailOptions, (error, info) => {
+      transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error(error);
         }else {
@@ -76,9 +84,9 @@ router
             console.log(nodemailer.getTestMessageUrl(info));
           }
         }
-    });
+      });
 
-    const confirmationMailOptions = {
+      const confirmationMailOptions = {
         from: '"Glenn Love" <glenn@bigpicture.life>',
         to: req.body.email,
         subject: 'Confirmation',
@@ -93,9 +101,9 @@ router
         Big Picture Consulting
         <br><br>
         <i>We're in it with you</i>`
-    };
+      };
 
-    transporter.sendMail(confirmationMailOptions, (error, info) => {
+      transporter.sendMail(confirmationMailOptions, (error, info) => {
         if (error) {
           console.error(error);
         }else {
@@ -104,7 +112,8 @@ router
             console.log(nodemailer.getTestMessageUrl(info));
           }
         }
-    });
+      });
+    }
   });
 
 module.exports = router;
