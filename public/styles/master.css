@@ -50,6 +50,7 @@ header {
 a {
   text-decoration: none;
   color: #40c2c5;
+  font-weight: bold;
 }
 
 a:hover {
@@ -235,8 +236,9 @@ section .img {
   border-radius: 10px;
 }
 
-.question {
+.tb {
   color: #48d0d3;
+  font-weight: bold;
 }
 
 .answer {

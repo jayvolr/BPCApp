@@ -30,12 +30,6 @@ if (process.env.NODE_ENV === "production") {
 }
 
 router
-  .get('/db', (req, res) => {
-    const people = req.db.get('people');
-    people.find({}).then(data => {
-      res.send(data);
-    });
-  })
   .post('/contact', (req, res) => {
     request.post({url:'https://www.google.com/recaptcha/api/siteverify', form: {response: req.body.recaptcha, secret: secrets.captchaSecret}}, function(err,httpResponse,body) {
       const isHuman = JSON.parse(body)['success'];
