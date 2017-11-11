@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Picture Consulting</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68162939-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-68162939-2');
+    </script>
+  </head>
+  <body>
+    {{> navigation}}
+    <section id="titleSection" style="margin-top: 71px">
+      <h1>{{post.title}}</h1>
+    </section>
+    <section class="text black main">
+      {{post.mainImg}}
+      <div class="postContent">
+        {{{post.content}}}
+      </div>
+    </section>
+    <footer>
+      <div class="footer-col">
+        <h1>About BPC</h1>
+        <p class="text black">Big Picture Consulting is a management consulting firm that exists to serve leaders. Our mission is to help you strategize, grow your revenues, increase your profits and solve complex problems. It's your big picture. We're in it with you.</p>
+      </div>
+      <div class="footer-col">
+        <h1>Useful Links</h1>
+        <p class="text"><a href="about">About BPC and it's President</a><a href="services">Consulting Services</a><a href="testimonials">What Others Are Saying</a><a href="/#contact">Connect</a></p>
+      </div>
+      <div class="footer-col">
+        <h1>Social</h1>
+        <p class="text"><a href="http://linkedin.com/in/glenn-love-42b62717">Linkedin</a><a href="#">Google+</a><a href="#">Twitter</a><a href="#">Facebook</a></p>
+      </div>
+    </footer>
+    <div id="copyright">Copyright © 2017 - Big Picture Consulting</div>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet">
+    <link href="../styles/fontello.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/master.css">
+    <script src="../scripts/zenscroll-min.js"></script>
+    <script src="../scripts/dropDown.js"></script>
+  </body>
+</html>

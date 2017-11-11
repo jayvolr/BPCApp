@@ -134,6 +134,18 @@ router
 
       }
     });
+  })
+  .get('/blog', (req, res) => {
+    req.db.get('blogPosts').find({})
+      .then(posts => {
+        res.render('blog', {posts});
+      });
+  })
+  .get('/blog/:slug', (req, res) => {
+    req.db.get('blogPosts').findOne({slug: req.params.slug})
+      .then(post => {
+        res.render('blogPost', {post});
+      });
   });
 
 module.exports = router;

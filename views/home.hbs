@@ -4,9 +4,25 @@
   <body>
     <header>
       <div id="brand"><img src="images/brand.png" alt="brand"></div>
-      <ul id="menuList"><a class="menuItem">About</a><a class="menuItem">Services</a><a class="menuItem">Testimonials</a><a class="menuItem">FAQ</a><button id="getStarted" class="ghostBtn">Get Started</button></ul><button id="dropDownButton"><i class="icon-menu"></i></button></header>
+      <ul id="menuList">
+        <a class="menuItem">About</a>
+        <a href="blog" class="menuItem">Blog</a>
+        <a class="menuItem">Services</a>
+        <a class="menuItem">Testimonials</a>
+        <a class="menuItem">FAQ</a>
+        <button id="getStarted" class="ghostBtn">Get Started</button>
+      </ul>
+      <button id="dropDownButton"><i class="icon-menu"></i></button>
+    </header>
       <div id="dropDownMenu">
-        <ul id="dropDownList"><a class="dropDownItem">About</a><a class="dropDownItem">Services</a><a class="dropDownItem">Testimonials</a><a class="dropDownItem">FAQ</a><button id="dropDownGetStarted">Get Started</button></ul>
+        <ul id="dropDownList">
+          <a class="dropDownItem">About</a>
+          <a href="blog" class="dropDownItem">Blog</a>
+          <a class="dropDownItem">Services</a>
+          <a class="dropDownItem">Testimonials</a>
+          <a class="dropDownItem">FAQ</a>
+          <button id="dropDownGetStarted">Get Started</button>
+        </ul>
       </div>
 
       {{#if info}}

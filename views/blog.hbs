@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Picture Consulting</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68162939-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-68162939-2');
+    </script>
+  </head>
+  <body>
+    {{> navigation}}
+    <section id="titleSection" style="margin-top: 71px">
+      <h1>Blog</h1>
+    </section>
+    <section id="blogPosts" class="text black main">
+      {{#each posts}}
+        <a href="blog/{{this.slug}}">
+          <div class="blogPostCard">
+            <h1>{{this.title}}</h1>
+            <!-- <h4>{{this.creationDate}}</h4> -->
+            <p>{{this.contentPreview}}</p>
+          </div>
+        </a>
+      {{/each}}
+    </section>
+    {{> foot}}
+  </body>
+</html>

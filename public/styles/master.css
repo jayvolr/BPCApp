@@ -16,6 +16,10 @@ header {
   z-index: 1;
 }
 
+#blogPosts a:hover {
+   text-decoration: none;
+}
+
 .hidden {
   display: none;
 }
