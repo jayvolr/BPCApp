@@ -26,9 +26,9 @@
       {{#each posts}}
         <a href="blog/{{this.slug}}">
           <div class="blogPostCard">
+            <div class="mainImg"><img src="blogImages/{{this.slug}}.jpg"></div>
             <h1>{{this.title}}</h1>
-            <!-- <h4>{{this.creationDate}}</h4> -->
-            <p>{{this.contentPreview}}</p>
+            <p class="black">{{this.featuredText}}</p>
           </div>
         </a>
       {{/each}}

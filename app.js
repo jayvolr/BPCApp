@@ -31,6 +31,9 @@ app
   })
   .use(require('./routes/staticRoutes'))
   .use(require('./routes/dbRoutes'))
+  .get('*', (req, res) => {
+    res.send(404, 'Error 404 - Not Found');
+  })
   .listen(port, () => {
     console.log(`Server listening on port ${port}... (${app.get('env')})`);
   });

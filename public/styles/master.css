@@ -16,8 +16,48 @@ header {
   z-index: 1;
 }
 
+#blogPosts {
+  padding: 30px 7%;
+}
+
 #blogPosts a:hover {
    text-decoration: none;
+}
+
+.blogPostCard {
+  /*background: #eceef1;*/
+  height: 300px;
+  margin-bottom: 40px;
+  -webkit-transition: box-shadow 300ms ease-in-out;
+  -o-transition: box-shadow 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out;
+}
+
+.blogPostCard:hover {
+  box-shadow: #afafaf 0 0 20px 0px;
+}
+
+.blogPostCard h1 {
+  float: left;
+  margin: 15px 20px;
+}
+
+.blogPostCard p {
+  clear: left;
+  margin: 15px 20px;
+}
+
+.mainImg {
+  overflow: hidden;
+  width: 300px;
+  height: 100%;
+  float: right;
+  margin-left: 5%;
+}
+
+.mainImg img {
+  width: auto;
+  height: 100%;
 }
 
 .hidden {
@@ -54,7 +94,7 @@ header {
 a {
   text-decoration: none;
   color: #40c2c5;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 
 a:hover {
@@ -606,6 +646,10 @@ Dedicated pages
 }
 
 .main h2 {
+  color: #40c2c5;
+}
+
+.main h1 {
   color: #40c2c5;
 }
 
