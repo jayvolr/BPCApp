@@ -5,15 +5,45 @@ body {
 
 header {
   width: 100%;
-  height: auto;
-  background: white;
+  height: 72px;
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
   -webkit-transition: background 150ms ease-in-out;
   -o-transition: background 150ms ease-in-out;
   transition: background 150ms ease-in-out;
+  z-index: 2;
+  border-bottom: 1px solid transparent;
+}
+
+#navInterior {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -550px;
+  -webkit-transition: background 150ms ease-in-out;
+  -o-transition: background 150ms ease-in-out;
+  transition: background 150ms ease-in-out;
   z-index: 1;
+}
+
+#introText {
+  font-style: italic;
+  margin-top: 60px;
+  font-size: 27px;
+  padding: 0 160px;
+  text-shadow: #0000009e 1px 1px 1px;
+  font-weight: bold;
+}
+
+#introAuthor {
+  font-style: normal;
+  font-size: 36px;
 }
 
 .hidden {
@@ -40,7 +70,7 @@ header {
 }
 
 #infoRibbon {
-  background-color: #40c2c5;
+  background-color: #1C7FC9;
 }
 
 #errorRibbon {
@@ -49,8 +79,7 @@ header {
 
 a {
   text-decoration: none;
-  color: #40c2c5;
-  font-weight: bold;
+  color: #1C7FC9;
 }
 
 a:hover {
@@ -63,6 +92,17 @@ header a:hover {
 
 #headerScrolled {
   border-bottom: 1px solid #ebebeb;
+  background: white;
+}
+
+#headerScrolled .menuItem {
+  color: #1C7FC9;
+}
+
+#headerScrolled #getStarted {
+  border-color: #1C7FC9;
+  background: #1C7FC9;
+  color: white;
 }
 
 button:focus {
@@ -98,25 +138,29 @@ path {
 }
 
 .fillBlue {
-  fill: #48d0d3;
+  fill: #1C7FC9;
 }
 
 #menuList {
   margin: 0;
   list-style: none;
-  float: right;
+  display: flex;
+  padding: 0;
+  text-align: center;
 }
 
 .menuItem {
-  color: #48d0d3;
+  width: 16%;
+  text-transform: uppercase;
+  color: black;
   display: inline-block;
   padding: 20px;
   font-size: 18px;
   font-weight: 400;
   border-bottom: 4px solid rgba(72, 208, 211, 0);
-  -webkit-transition: border 150ms ease-in-out;
-  -o-transition: border 150ms ease-in-out;
-  transition: border 150ms ease-in-out;
+  -webkit-transition: color 150ms ease-in-out;
+  -o-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -125,27 +169,19 @@ path {
 }
 
 .menuItem:hover {
-  border-bottom: 4px solid #48d0d3;
+  color: #1C7FC9;
 }
 
-.menuItemScrolled {
-  color: #48d0d3;
-  display: inline-block;
-  padding: 20px;
-  font-size: 18px;
-  font-weight: 400;
-  border-bottom: 4px solid rgba(30, 144, 255, 0);
-  -webkit-transition: border 150ms ease-in-out;
-  -o-transition: border 150ms ease-in-out;
-  transition: border 150ms ease-in-out;
-  cursor: pointer;
-}
-
-.menuItemScrolled:hover {
-  border-bottom: 4px solid #48d0d3;
+#headerScrolled .menuItem:hover {
+  color: #6abbf7;
 }
 
 #top {
+  height: 400px;
+  background: url('../images/photos/IMG_2291.jpg');
+  background-size: cover;
+  background-position-y: -130px;
+  filter: contrast(125%);
   display: block;
   text-align: center;
   color: white;
@@ -164,7 +200,7 @@ path {
 }
 
 #top h1 {
-  color: #48d0d3;
+  color: #1C7FC9;
   margin: 0;
   font-size: 60px;
   font-weight: 600;
@@ -208,7 +244,7 @@ section .img {
 }
 
 #about .img {
-  background-image: url('/images/photos/lake-2775717_1280.jpg');
+  background-image: url('../images/photos/charles-forerunner-378.jpg');
 }
 
 #services .img {
@@ -216,9 +252,9 @@ section .img {
 }
 
 #faq .img {
-  background-image: url('/images/photos/john-allen-234721.jpg');
+  background-image: url('../images/photos/manu-schwendener-39728.jpg');
   width: 100%;
-  height: 200px;
+  height: 150px;
   background-position: center;
 }
 
@@ -237,7 +273,7 @@ section .img {
 }
 
 .tb {
-  color: #48d0d3;
+  color: #1C7FC9;
   font-weight: bold;
 }
 
@@ -247,14 +283,14 @@ section .img {
 
 .titleOnImg {
   color: white;
-  text-shadow: black 0 0 40px;
+  /*text-shadow: black 0 0 40px;*/
   font-size: 40px;
-  line-height: 139px;
+  line-height: 83px;
   padding: 0 15px;
 }
 
 .title {
-  color: #48d0d3;
+  color: #1C7FC9;
   text-transform: uppercase;
   font-size: 25px;
   font-weight: 400;
@@ -272,7 +308,7 @@ section .img {
 }
 
 .black {
-  color: #6d6d6d;
+  color: #5f5f5f;
 }
 
 .white {
@@ -281,14 +317,14 @@ section .img {
 
 .ghostBtn {
   background: rgba(255, 255, 255, 0);
-  color: #48d0d3;
+  color: #1C7FC9;
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 400;
   font-family: 'Titillium Web', sans-serif;
   padding: 10px 40px;
   cursor: pointer;
-  border: 1px solid #48d0d3;
+  border: 1px solid #1C7FC9;
   border-radius: 4px;
   -webkit-transition: background 150ms ease-in-out, color 150ms ease-in-out;
   -o-transition: background 150ms ease-in-out, color 150ms ease-in-out;
@@ -300,13 +336,13 @@ section .img {
 }
 
 .ghostBtn:hover {
-  background: #48d0d3;
+  background: #1C7FC9;
   color: white;
 }
 
 .moreBtn {
   background: white;
-  color: #48d0d3;
+  color: #1C7FC9;
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 400;
@@ -326,35 +362,46 @@ section .img {
 }
 
 .moreBtn:hover {
-  background: #48d0d3;
+  background: #1C7FC9;
   color: white;
 }
 
 .blueBtn {
-  background: #48d0d3;
+  background: #1C7FC9;
   color: white;
-  border-color: #48d0d3;
+  border-color: #1C7FC9;
 }
 
 .blueBtn:hover {
   background: transparent;
-  color: #48d0d3;
+  color: #1C7FC9;
 }
 
 #getStarted {
-  background: #48d0d3;
-  color: white;
+  text-transform: uppercase;
+  width: 130px;
+  height: 43px;
+  background: transparent;
+  color: black;
   font-size: 18px;
   font-family: 'Titillium Web', sans-serif;
   font-weight: 400;
-  text-transform: capitalize;
   padding: 7px 10px;
   margin: 0 13px;
+  margin-top: 13px;
+  border-color: black;
 }
 
 #getStarted:hover {
-  background: transparent;
-  color: #48d0d3;
+  background: #1C7FC9;
+  color: white;
+  border-color: #1C7FC9;
+}
+
+#headerScrolled #getStarted:hover {
+  background: white;
+  color: #1C7FC9;
+  border-color: #1C7FC9;
 }
 
 #about {
@@ -376,7 +423,7 @@ section .img {
 }
 
 footer {
-  background: #eceef1;
+  background: #387FB7;
 }
 
 #copyright {
@@ -387,9 +434,11 @@ footer {
 }
 
 #dropDownMenu {
+  z-index: 1;
+  top: 72px;
   height: 0px;
   overflow: hidden;
-  background: #6b6b6b;
+  background: white;
   position: fixed;
   width: 100%;
   transition: height 200ms ease-in-out;
@@ -399,6 +448,7 @@ footer {
   margin: 0;
   padding: 0;
   text-align: center;
+  background: #6b6b6b;
 }
 
 #dropDownButton {
@@ -431,7 +481,7 @@ footer {
   width: 100%;
   margin: 0;
   border: none;
-  background: #48d0d3;
+  background: #1C7FC9;
   color: white;
   font-size: 18px;
   font-family: 'Titillium Web', sans-serif;
@@ -441,7 +491,7 @@ footer {
   position: relative;
   top: 1px;
   cursor: pointer;
-  border-bottom: 1px solid #40c2c5;
+  border-bottom: 1px solid #1C7FC9;
 }
 
 #dropDownGetStarted:hover {
@@ -473,7 +523,7 @@ form {
 }
 
 form input {
-  border: 1px solid #40c2c5;
+  border: 1px solid #1C7FC9;
   border-radius: 5px;
   font-size: 16px;
   padding: 3%;
@@ -490,7 +540,7 @@ form input:focus {
 }
 
 form textarea {
-  border: 1px solid #40c2c5;
+  border: 1px solid #1C7FC9;
   border-radius: 5px;
   font-size: 16px;
   padding: 3%;
@@ -517,7 +567,7 @@ body section form .formError {
 #optOut {
   width: 15px;
   height: 15px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 footer {
@@ -529,7 +579,7 @@ footer h1 {
   font-weight: 400;
   font-size: 20px;
   letter-spacing: 3px;
-  color: #91bdbe;
+  color: white;
 }
 
 .footer-col {
@@ -541,19 +591,19 @@ footer h1 {
 
 .footer-col p {
   font-size: 16px;
-  color: #9a9a9a;
+  color: #cecece;
 }
 
 .footer-col a {
-  color: #9a9a9a;
+  color: #cecece;
   padding: 10px 0;
   display: block;
-  border-bottom: 1px solid #c5c5c5;
+  border-bottom: 1px solid #cecece;
 }
 
 .footer-col a:hover {
   text-decoration: none;
-  color: #8fc0c3;
+  color: white;
 }
 
 /*
@@ -571,6 +621,7 @@ Dedicated pages
 #aboutTop {
   background-image: url('/images/photos/ales-krivec-1711.jpg');
 }
+
 
 #servicesTop {
   background-image: url('/images/photos/paul-jarvis-14.jpg');
@@ -594,7 +645,7 @@ Dedicated pages
 
 .main {
   display: block;
-  color: #333333;
+  color: #5f5f5f;
   background: white;
   text-align: left;
   font-size: 18px;
@@ -602,7 +653,7 @@ Dedicated pages
 }
 
 .main h2 {
-  color: #40c2c5;
+  color: #1C7FC9;
 }
 
 .main blockquote {
@@ -617,7 +668,7 @@ Dedicated pages
 .quoteAuthor {
   float: right;
   font-weight: bold;
-  color: #40c2c5;
+  color: #1C7FC9;
 }
 
 #portrait {
@@ -643,10 +694,51 @@ Dedicated pages
 }
 
 /*
+Displays with less than 1100px of width
+*/
+
+@media (max-width: 1100px) {
+
+  #navInterior {
+    left: 0;
+    margin-left: 0;
+  }
+
+  #getStarted {
+    width: 180px;
+  }
+
+  #introText {
+    padding: 0 60px;
+  }
+
+  #top {
+    background-position: top;
+  }
+
+}
+
+/*
+Displays with less than 900px of width
+*/
+
+@media (max-width: 900px) {
+
+  #getStarted {
+    width: 140px;
+  }
+
+}
+
+/*
 Displays with less than 800px of width
 */
 
 @media (max-width: 800px) {
+
+  #introText {
+    padding: 0;
+  }
 
   .secondTop {
     background-position: top;
@@ -750,13 +842,27 @@ Displays with less than 800px of width
 }
 
 /*
+Displays with less than 550px of width
+*/
+
+@media (max-width: 550px) {
+  #top {
+    padding: 50px 30px;
+  }
+
+  #introText {
+    font-size: 24px;
+  }
+}
+
+/*
 Displays with less than 508px of width
 */
 
 @media (max-width: 508px) {
 
   .titleOnImg {
-    line-height: normal;
+    line-height: 1.1;
   }
 
   #footerLinks {
@@ -767,4 +873,20 @@ Displays with less than 508px of width
     width: 100%;
   }
 
+}
+
+/*
+Displays with less than 430px of width
+*/
+
+@media (max-width: 430px) {
+  #top {
+    padding: 20px 10px;
+    height: 470px;
+  }
+
+  /*.text {
+    padding: 25px;
+    font-size: 20px;
+  }*/
 }

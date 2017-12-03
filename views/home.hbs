@@ -3,11 +3,17 @@
   {{> head}}
   <body>
     <header>
-      <div id="brand"><img src="images/brand.png" alt="brand"></div>
-      <ul id="menuList"><a class="menuItem">About</a><a class="menuItem">Services</a><a class="menuItem">Testimonials</a><a class="menuItem">FAQ</a><button id="getStarted" class="ghostBtn">Get Started</button></ul><button id="dropDownButton"><i class="icon-menu"></i></button></header>
-      <div id="dropDownMenu">
-        <ul id="dropDownList"><a class="dropDownItem">About</a><a class="dropDownItem">Services</a><a class="dropDownItem">Testimonials</a><a class="dropDownItem">FAQ</a><button id="dropDownGetStarted">Get Started</button></ul>
+      <div id="navInterior">
+        <div id="brand"><img src="images/logo.png" alt="brand"></div>
+        <ul id="menuList"><a class="menuItem">About</a><a class="menuItem">Services</a><a class="menuItem">Testimonials</a><a class="menuItem">FAQ</a>
+          <a><button id="getStarted" class="ghostBtn">Get Started</button></a>
+        </ul>
+        <button id="dropDownButton"><i class="icon-menu"></i></button>
       </div>
+    </header>
+    <div id="dropDownMenu">
+      <ul id="dropDownList"><a class="dropDownItem">About</a><a class="dropDownItem">Services</a><a class="dropDownItem">Testimonials</a><a class="dropDownItem">FAQ</a><button id="dropDownGetStarted">Get Started</button></ul>
+    </div>
 
       {{#if info}}
         <div id="infoRibbon" class="ribbon">{{info}}</div>
@@ -17,13 +23,20 @@
       {{/if}}
 
       <section id="top">
-        <div id="logoTop"></div>
-        <h2><i>We're in it with you.</i></h2>
+        <p id="introText">
+          "After formulating and communicating the right strategy and optimizing operations to execute that strategy, CEOs and other top leaders then must be able to build management teams that truly understand the big picture."
+          <br>
+          <span id="introAuthor">Mark V. Hurd</span> - CEO, Oracle Corp.
+    </p>
       </section>
       <section id="about">
         <div class="text">
           <h1 class="title">About</h1>
-          <p class="black">Big Picture Consulting is a management consulting firm that exists to serve leaders. Our mission is to help you strategize, grow your revenues, increase your profits and solve complex problems. It's your big picture. We're in it with you.</p>
+          <p class="black">Big Picture Consulting is a management consulting firm that exists to serve leaders. Our mission is to help you strategize, grow your revenues, increase your profits and solve complex problems. It's your big picture. We're in it with you.
+            <br>
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend pretium justo, a rhoncus elit molestie ut. Donec porttitor scelerisque dui. Sed pretium est ac est tempor, at condimentum justo maximus. Vivamus ac lacinia magna.
+          </p>
           <a
             href="/about"><button class="moreBtn blueBtn">Continue Reading</button></a>
         </div>
@@ -96,7 +109,7 @@
             data-badge="inline"
             data-callback='onRecaptcha'>Send
           </button>
-          <button id="fakeSubmit" class="ghostBtn">Send</button>
+          <button id="fakeSubmit" class="ghostBtn blueBtn">Send</button>
         </form>
 
       </section>

@@ -1,21 +1,4 @@
-var header = document.getElementsByTagName('header')[0];
-var paths = document.getElementsByTagName('path');
-
 zenscroll.setup(350, 194.719);
-
-window.addEventListener('scroll', function() {
-  if (window.scrollY > 0) {
-    header.id = "headerScrolled";
-    for (var path of paths) {
-      path.classList.add('fillBlue');
-    }
-  }else {
-    header.id = "";
-    for (var path of paths) {
-      path.classList.remove('fillBlue');
-    }
-  }
-});
 
 var dropDownMenu = document.getElementById('dropDownMenu');
 var dropDownIcon = document.querySelector('#dropDownButton i');

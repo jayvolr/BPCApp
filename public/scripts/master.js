@@ -1,6 +1,5 @@
 var header = document.getElementsByTagName('header')[0];
 var menuItems = document.querySelectorAll('#menuList a');
-var paths = document.getElementsByTagName('path');
 var brand = document.getElementById('brand');
 
 zenscroll.setup(350, 71);
@@ -8,14 +7,8 @@ zenscroll.setup(350, 71);
 window.addEventListener('scroll', function() {
   if (window.scrollY > 0) {
     header.id = "headerScrolled";
-    for (var path of paths) {
-      path.classList.add('fillBlue');
-    }
-  }else {
+  }else if (!dropDownOpen) {
     header.id = "";
-    for (var path of paths) {
-      path.classList.remove('fillBlue');
-    }
   }
 });
 
@@ -41,11 +34,15 @@ var dropDownOpen = false;
 function toggleDropDown(on) {
   if (on) {
     dropDownMenu.style.height = '300px';
-    dropDownIcon.className = 'icon-close'
+    dropDownIcon.className = 'icon-close';
+    header.id = "headerScrolled";
     dropDownOpen = true;
   }else {
     dropDownMenu.style.height = '0px';
-    dropDownIcon.className = 'icon-menu'
+    dropDownIcon.className = 'icon-menu';
+    if (!window.scrollY > 0) {
+      header.id = "";
+    }
     dropDownOpen = false;
   }
 }
@@ -72,8 +69,10 @@ document.getElementById('dropDownButton').addEventListener('click', function() {
 
 if (!!window.location.hash) {
   var section = window.location.hash.slice(1);
-  document.body.scrollIntoView(true);
-  zenscroll.toY(zenscroll.getTopOf(document.getElementById(section)) - 71);
+  zenscroll.stop()
+  zenscroll.toY(zenscroll.getTopOf(document.getElementById(section)) -71);
+  // setTimeout(function() {
+  // }, 500);
 }
 
 var ribbon = document.getElementById('infoRibbon') || document.getElementById('errorRibbon');
