@@ -17,6 +17,15 @@ header {
   border-bottom: 1px solid transparent;
 }
 
+.noListIcons {
+  list-style: none;
+  margin-left: -19px;
+}
+
+ol {
+  margin-left: -1px;
+}
+
 #navInterior {
   width: 100%;
   max-width: 1100px;

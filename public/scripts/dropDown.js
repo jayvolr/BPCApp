@@ -40,3 +40,7 @@ if (!!window.location.hash) {
   document.body.scrollIntoView(true);
   zenscroll.toY(zenscroll.getTopOf(document.getElementById(section)) - 194.719);
 }
+
+if (window.location.pathname === '/faq' && document.referrer === ('http://localhost:3000/' || 'http://beta.bigpicture.life' || 'http://bigpicture.life')) {
+  zenscroll.toY(zenscroll.getTopOf(document.getElementById('third')) - 88);
+}
