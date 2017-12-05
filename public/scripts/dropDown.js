@@ -41,6 +41,8 @@ if (!!window.location.hash) {
   zenscroll.toY(zenscroll.getTopOf(document.getElementById(section)) - 194.719);
 }
 
-if (window.location.pathname === '/faq' && document.referrer === ('http://localhost:3000/' || 'https://beta.bigpicture.life/' || 'https://bigpicture.life/')) {
-  zenscroll.toY(zenscroll.getTopOf(document.getElementById('third')) - 88);
+if (window.location.pathname === '/faq') {
+  if (document.referrer === 'http://localhost:3000/' || document.referrer === 'https://beta.bigpicture.life/' || document.referrer === 'https://bigpicture.life/') {
+    zenscroll.toY(zenscroll.getTopOf(document.getElementById('third')) - 88);
+  }
 }
