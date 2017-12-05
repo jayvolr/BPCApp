@@ -50,11 +50,6 @@ ol {
   font-weight: bold;
 }
 
-#introAuthor {
-  font-style: normal;
-  font-size: 36px;
-}
-
 .hidden {
   display: none;
 }
@@ -649,7 +644,7 @@ Dedicated pages
   background: #eceef1;
   padding: 0;
   font-size: 26px;
-  color: #333333;
+  color: #1C7FC9;
 }
 
 .main {
