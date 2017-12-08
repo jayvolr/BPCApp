@@ -79,7 +79,7 @@ var ribbon = document.getElementById('infoRibbon') || document.getElementById('e
 
 if (!!ribbon) {
   setTimeout(function(){
-    ribbon.style.top = 0;
+    ribbon.style.top = '-47px';
   }, 4000)
 }
 

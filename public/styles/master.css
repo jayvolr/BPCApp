@@ -17,6 +17,10 @@ header {
   border-bottom: 1px solid transparent;
 }
 
+.italics {
+  font-style: italic;
+}
+
 .noListIcons {
   list-style: none;
   margin-left: -19px;
@@ -66,6 +70,7 @@ ol {
   color: white;
   text-align: center;
   position: fixed;
+  z-index: 2;
   top: 71px;
   overflow: hidden;
   -webkit-transition: top 500ms ease-in-out;
@@ -455,6 +460,10 @@ footer {
   background: #6b6b6b;
 }
 
+#dropDownList a:hover {
+  text-decoration: none;
+}
+
 #dropDownButton {
   display: none;
   color: #676767;
@@ -499,7 +508,7 @@ footer {
 }
 
 #dropDownGetStarted:hover {
-  background: #1ca6a9;
+  background: #6abbf7;
 }
 
 ::-webkit-input-placeholder { /* Chrome */
@@ -637,6 +646,7 @@ Dedicated pages
 
 #faqTop {
   background-image: url('/images/photos/paul-jarvis-12.jpg');
+  background-position: top;
 }
 
 #titleSection {
@@ -745,7 +755,6 @@ Displays with less than 800px of width
   }
 
   .secondTop {
-    background-position: top;
     min-height: 150px;
   }
 
