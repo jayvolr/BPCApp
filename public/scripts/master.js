@@ -96,6 +96,8 @@ let validityStatus = {
   message: false
 }
 
+var rawPhoneValue;
+
 function checkValidity(element) {
   if (element.required && element.value === '') {
     document.getElementById(element.name + 'Error').innerHTML = 'Please fill out this field';
@@ -140,10 +142,10 @@ function checkValidity(element) {
       }
       break;
     case 'phone':
-      if (validator.isMobilePhone(element.value, 'en-US')) {
+      if (validator.isMobilePhone(rawPhoneValue, 'en-US')) {
         document.getElementById(element.name + 'Error').style.display = 'none';
         validityStatus[element.name] = true;
-      }else if (element.value.length > 0) {
+      }else if (rawPhoneValue.length > 0) {
         document.getElementById(element.name + 'Error').innerHTML = 'Please enter a valid US phone number';
         document.getElementById(element.name + 'Error').style.display = 'block';
         validityStatus[element.name] = false;
@@ -195,6 +197,39 @@ document.getElementById('fakeSubmit').addEventListener('click', function(e) {
 // document.getElementById('formSubmit').addEventListener('click', function(e) {
 //   document.forms.contactForm.submit();
 // });
+
+// A function to format text to look like a phone number
+function phoneFormat(input){
+  // Strip all characters from the input except digits
+  input = input.replace(/\D/g,'');
+
+  // Trim the remaining input to ten characters, to preserve phone number format
+  input = input.substring(0,10);
+
+  // Based upon the length of the string, we add formatting as necessary
+  var size = input.length;
+  if(size == 0) {
+    input = input;
+  } else if(size < 4) {
+    input = '('+input;
+  } else if(size < 7) {
+    input = '('+input.substring(0,3)+') '+input.substring(3,6);
+  } else {
+    input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
+  }
+  return input;
+}
+
+var phoneInput = document.getElementById('phoneInput');
+
+if (!!phoneInput) {
+  phoneInput.addEventListener('keyup', function(e) {
+    var formatted = phoneFormat(phoneInput.value);
+    phoneInput.value = formatted;
+    rawPhoneValue = phoneInput.value.replace(/\D/g,'');
+    console.log(rawPhoneValue);
+  })
+}
 
 function onRecaptcha(g) {
   document.getElementById('hidden').value = g;

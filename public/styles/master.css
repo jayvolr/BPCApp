@@ -633,6 +633,7 @@ Dedicated pages
 
 #aboutTop {
   background-image: url('/images/photos/ales-krivec-1711.jpg');
+  background-position-y: -60px;
 }
 
 
@@ -749,6 +750,10 @@ Displays with less than 800px of width
 */
 
 @media (max-width: 800px) {
+
+  #aboutTop {
+    background-position-y: initial;
+  }
 
   #introText {
     padding: 0;
